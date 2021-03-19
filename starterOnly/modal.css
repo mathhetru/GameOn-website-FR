@@ -34,7 +34,6 @@ img {
   margin: 3.5%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .topnav p {
   padding: 0;
@@ -352,13 +351,16 @@ input[data-error]::after {
   padding-top: 10px;
 }
 .thank-body {
+  height: 88%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around
 }
 .text-thank {
   color: #c4c4c4;
 }
+
 
 /* custom select styles */
 
@@ -503,6 +505,11 @@ input[data-error]::after {
 }
 
 @media screen and (max-width: 800px) {
+  .logo {
+    width: 150px;
+    padding-left: 15px;
+    padding-top: 15px;
+  }
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -551,3 +558,12 @@ input[data-error]::after {
   }
 }
 
+@keyframes thankopen {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
