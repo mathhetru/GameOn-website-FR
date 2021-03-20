@@ -30,3 +30,11 @@ function launchThank() {
   thankBg.style.display = "block";
 }
 
+
+const SubForm = document.querySelector(".button");
+
+
+// test stop submit
+function SubmitStop() {
+
+}
