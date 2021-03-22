@@ -38,7 +38,7 @@ img {
 .topnav p {
   padding: 0;
 }
-.topnav a {
+.topnav-link{
   display: inline-block;
   color: #000000;
   text-align: center;
@@ -49,19 +49,19 @@ img {
   font-weight: bold;
   position: relative;
 }
-.topnav a:hover {
+.after:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 11px;
   font-weight: normal;
 }
-.topnav a.active {
+.topnav-link:nth-child(1) {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 11px;
   font-weight: normal;
 }
-.topnav a::after {
+.after::after {
   content: "";
   position: absolute;
   background-color: white;
@@ -70,13 +70,13 @@ img {
   bottom: 9px;
   left: 13px;
 }
-.topnav .icon {
+.icon {
   display: none;
 }
 
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
-  .topnav a.icon {
+  .icon {
     float: right;
     display: block;
   }
@@ -356,10 +356,12 @@ input[data-error]::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around
+  justify-content: space-around;
+  margin: auto 50px;
 }
 .text-thank {
   color: #c4c4c4;
+  text-align: center;
 }
 
 
@@ -556,6 +558,18 @@ input[data-error]::after {
     margin: 0;
     font-size: 0.7rem;
   }
+  .topnav-link:nth-child(1) {
+    background-color: white;
+    color: #000000;
+    border-radius: none;
+    font-weight: bold;
+  }
+  .topnav-link:nth-child(1):hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 11px;
+    font-weight: normal;
+}
 }
 
 @keyframes modalopen {

@@ -34,7 +34,56 @@ function launchThank() {
 const SubForm = document.querySelector(".button");
 
 
-// test stop submit
-function SubmitStop() {
+// FORMULAIRE
 
-}
+//validation du prénom
+const firstName = document.getElementById("first");
+firstName.oninvalid = function(e) {
+	e.target.setCustomValidity("");
+	if (!e.target.validity.valid) {
+		if (e.target.value.length == 0) {
+e.target.setCustomValidity("Ce champ est obligatoire");
+		} else {
+e.target.setCustomValidity("Veuillez entrer 2 caractères ou plus pour le champ du prénom.");
+		}
+	}
+};
+
+//validation du nom
+const lastName = document.getElementById("last");
+lastName.oninvalid = function(e) {
+	e.target.setCustomValidity("");
+	if (!e.target.validity.valid) {
+		if (e.target.value.length == 0) {
+e.target.setCustomValidity("Ce champ est obligatoire");
+		} else {
+e.target.setCustomValidity("Veuillez entrer 2 caractères ou plus pour le champ du nom.");
+		}
+	}
+};
+
+// validation email 
+const emailValid = document.getElementById("email");
+emailValid.oninvalid = function(e) {
+	e.target.setCustomValidity("");
+	if (!e.target.validity.valid) {
+		if (e.target.value.length == 0) {
+e.target.setCustomValidity("Ce champ est obligatoire");
+		} else {
+e.target.setCustomValidity("Entrez une adresse valide. Exemple : contact@nom.com");
+		}
+	}
+};
+
+// validation date de naissance
+const birthValid = document.getElementById("birthdate");
+birthValid.oninvalid = function(e) {
+	e.target.setCustomValidity("");
+	if (!e.target.validity.valid) {
+		if (e.target.value.length == 0) {
+e.target.setCustomValidity("Ce champ est obligatoire");
+		} else {
+e.target.setCustomValidity("Vous devez entrer votre date de naissance.");
+		}
+	}
+};
