@@ -18,7 +18,7 @@
         <a href="#" class="topnav-link after"><p>À propos</p></a>
         <a href="#" class="topnav-link after"><p>Contact</p></a>
         <a href="#" class="topnav-link after"><p>Évènements passés</p></a>
-        <a href="javascript:void(0);" class="topnav-link  icon" onclick="editNav()">
+        <a href="javascript:void(0);" class="topnav-link  icon" >
           <i class="fa fa-bars"></i>
         </a>
       </div>
@@ -62,7 +62,7 @@
               </div>
               <div class="formData">
                 <label>Date de naissance</label><br>
-                <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
+                <input class="text-control" type="date" id="birthdate" name="birthdate" required/><br>
               </div>
               <div class="formData">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
@@ -110,7 +110,7 @@
                 </label><br>
               </div>
 
-              <input type="submit" class="btn-submit thank-btn" class="button" value="C'est parti" />
+              <input type="submit" id="inscription" class="btn-submit thank-btn" class="button" value="C'est parti" />
 
             </form>
           </div>
