@@ -25,11 +25,15 @@ function launchModal() {
 thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
 function launchThank() {
   thankBg.style.display = "block";
+
+
+  	
+	thankBtn.addEventListener("click",  function(launchThank) {
+			thankBg.style.display = "block";
 }*/
 
 document.getElementById("inscription").addEventListener("click", function(f) {
 
-	let erreur;
 	let firstName = document.getElementById("first");
 	let lastName = document.getElementById("last");
 	let emailValid = document.getElementById("email");
@@ -37,8 +41,8 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 	let quantityCity = document.getElementById("quantity");
 	let checkBox = document.getElementById("checkbox1");
 
-	const thankBtn = document.querySelectorAll(".thank-btn");
-	const thankBg = document.querySelector(".bground-thank");
+	let thankBtn = document.querySelector(".thank-btn");
+	let thankBg = document.querySelector(".bground-thank");
 
 	if (!firstName.value) {
 		firstName.oninvalid = function(e) {
@@ -51,7 +55,7 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};		
 	}
-	if (!lastName.value) {
+	else if (!lastName.value) {
 		lastName.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
@@ -62,18 +66,19 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};
 	} 
-	if (!emailValid.value) {
+	else if (!emailValid.value) {
 		emailValid.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
 				if (e.target.value.length == 0) {
 					f.preventDefault();
 					e.target.setCustomValidity("Entrez une adresse valide. Exemple : contact@nom.com");
+					return true;
 				}
 			}
 		};
 	}
-	if (!birthValid.value) {
+	else if (!birthValid.value) {
 		birthValid.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
@@ -84,7 +89,7 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};
 	}
-	if (!quantityCity.value) {
+	else if (!quantityCity.value) {
 		quantityCity.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
@@ -95,7 +100,7 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};
 	}
-	if (!checkBox.value) {
+	else if (!checkBox.unchecked) {
 		checkBox.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
@@ -106,14 +111,12 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};
 	}
-	else {
-		thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
-		function launchThank() {
-			thankBg.style.display = "block";
-		  }
+	else {thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
+	function launchThank() {
+	  thankBg.style.display = "block";
 		}
 	}
-	);
+});
 
 
 
@@ -130,60 +133,9 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 
 
 
-/*
-// FORMULAIRE
 
-//validation du prénom
-const firstName = document.getElementById("first");
-firstName.oninvalid = function(e) {
-	e.target.setCustomValidity("");
-	if (!e.target.validity.valid) {
-		if (e.target.value.length == 0) {
-e.target.setCustomValidity("Veuillez entrer 2 caractères ou plus pour le champ du prénom.");
-		}
-	}
-};
 
-//validation du nom
-const lastName = document.getElementById("last");
-lastName.oninvalid = function(e) {
-	e.target.setCustomValidity("");
-	if (!e.target.validity.valid) {
-		if (e.target.value.length == 0) {
-e.target.setCustomValidity("Ce champ est obligatoire");
-		} else {
-e.target.setCustomValidity("Veuillez entrer 2 caractères ou plus pour le champ du nom.");
-		}
-	}
-};
-
-// validation email 
-const emailValid = document.getElementById("email");
-emailValid.oninvalid = function(e) {
-	e.target.setCustomValidity("");
-	if (!e.target.validity.valid) {
-		if (e.target.value.length == 0) {
-e.target.setCustomValidity("Ce champ est obligatoire");
-		} else {
-e.target.setCustomValidity("Entrez une adresse valide. Exemple : contact@nom.com");
-		}
-	}
-};
-
-// validation date de naissance
-const birthValid = document.getElementById("birthdate");
-birthValid.oninvalid = function(e) {
-	e.target.setCustomValidity("");
-	if (!e.target.validity.valid) {
-		if (e.target.value.length == 0) {
-e.target.setCustomValidity("Ce champ est obligatoire");
-		} else {
-e.target.setCustomValidity("Vous devez entrer votre date de naissance.");
-		}
-	}
-};
-
-// empecher le comportement par défaut = rechargement de la page
+/* empecher le comportement par défaut = rechargement de la page
 const inscription = document.getElementById("inscription");
 inscription.addEventListener("click", function e(){
 	e.preventDefault();
