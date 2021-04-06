@@ -12,6 +12,7 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const thankBtn = document.querySelector(".thank-btn");
 
 
 // Clic "je m'inscris"
@@ -21,6 +22,8 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
+
+
 
 // Function Message erreur
 function showErrorMessage(champForm, formRempli, message) {
@@ -73,7 +76,23 @@ document.getElementById("inscription").addEventListener("click", function(formRe
 		};
 		return false;	
 	}
-	if (!checkBox.value) {
+	else {
+		thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
+		function launchThank() {
+			thankBg.style.display = "block";
+		  }
+		}
+	}
+	);
+
+
+// Lancement "Merci de votre participation"
+thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
+function launchThank() {
+  thankBg.style.display = "block";
+}
+
+/* 	if (!checkBox.value) {
 		checkBox.oninvalid = function(champForm, formRempli, message) {
 				champForm.target.setCustomValidity("");
 				if (!champForm.checked) {
@@ -84,12 +103,4 @@ document.getElementById("inscription").addEventListener("click", function(formRe
 				}
 			};
 		return false;	
-	}
-	else {
-		thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
-		function launchThank() {
-			thankBg.style.display = "block";
-		  }
-		}
-	}
-	);
+	} */
