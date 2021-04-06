@@ -32,11 +32,13 @@ document.getElementById("closeform").addEventListener("click", function(closeMod
 // fermer thanks via "fermer"
 document.querySelector(".button-thank").addEventListener("click", function(closeThank) {
 	thankBg.style.display = "none";
+	modalBg.style.display = "none";
 });
 
 // fermer thanks via croix
 document.getElementById("closethanks").addEventListener("click", function(closeThank) {
 	thankBg.style.display = "none";
+	modalBg.style.display = "none";
 });
 
 
@@ -91,7 +93,7 @@ document.getElementById("inscription").addEventListener("click", function(formRe
 		thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
 		function launchThank() {
 			thankBg.style.display = "block";
-			modalBg.style.display = "none";
+			
 		  }
 		  formRempli.preventDefault();
 		}
